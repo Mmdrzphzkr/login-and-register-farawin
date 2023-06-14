@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<!-- این تگه ریشه فایل هست و در بردارنده کل تگ های برنامه نویس هست -->
+
+<html lang="en">
+  <!-- این تگ در بردارنده اصول و قوانین و صورت فایل است  -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-l.css" />
+    <title>Register</title>
+  </head>
+
+  <!-- این تگ دربردارنده کد ها و تگ هایی است که برنامه نویس مینویسد و پروژه ای میسازد -->
+
+  <body>
+    <!-- The <section> tag defines a section in a document. -->
+    <!--  این تگ رو تعریف کردم تا بتونم باکس لاگین و ریجیستر رو وسط چین بکنم با فلکس-->
+
+    <section class="page-cont">
+      <!-- این تگ دیو هم برای تعریف کردن یه بخش بخصوص هست -->
+      <!-- این تگ رو تعریف کردم تا اجزای داخل باکس رو مرتب سازی بکنم و وسط چین کنم به وسیله فلکس -->
+
+      <div class="box-cont">
+        <!-- تگ اچ 1 برای تعریف یک متن هدر هست ک شماره های مختلفی داره  -->
+        <!-- ازین تگ استفاده کردم تا به مرور گر اطلاع بدم این صفحه محتویاتش درمورد ورود یا لاگین هست -->
+
+        <h1>Register</h1>
+
+        <!-- The <form> tag is used to create an HTML form for user input. -->
+        <!-- این تگ رو گذاشتم تا فرم ثبت نام و ورود رو داخلش قرار بدم و از قابلیت های اون بعدا استفاده کنم -->
+
+        <form class="from-1" action="">
+          <!-- The <label> tag defines a label for several elements -->
+          <!-- ازین تگ استفاده کردم تا اینپوت های مختلفی ک دارمو نام گذاری کنم  -->
+          <!-- تگ اینپوت برای ساختن فیلد های پرکردنی دکمه و ... هست که تایپ های مختلفی داره -->
+
+          <label for=""
+            >Telephone Number :
+            <input type="tel" placeholder="+98" pattern="[0-9]{11}" required />
+          </label>
+
+          <label for=""
+            >Password :
+            <input
+              type="password"
+              placeholder="********"
+              minlength="8"
+              required
+            />
+          </label>
+
+          <label for=""
+            >Confirm Password :
+            <input
+              type="password"
+              placeholder="********"
+              minlength="8"
+              required
+            />
+          </label>
+
+          <input type="submit" value="Register" />
+
+          <!-- این تگ دیو رو به کار بردم تا قسمتی ایجاد کنم و متن مورد نظر که برای رفتن به صفحه ورود هست رو قرار بدم -->
+
+          <div class="login">
+            <p>Do you have an account ? <a href="">Login</a></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+/* نماد ستاره استایل دهی را به کل اجزای صفحه میدهد و من میخوام تا باکس سایزینگ کل صفحه رو با این تگ ارث بری کنم */
+* {
+  /* پدینگ و مارجین رو برای اینکه ریست کنم مقادیرشو در تمام تگ ها صفر کردم تا اسکرول های اضافی حذف بشن */
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+/* تگ بادی سلکتوری برای بادی است و ان را انتخاب میکند و میخوام تا به بادی باکس سایزینگ بدم تا اجزا در هر جای بادی از باکس تعریف شده براشون بیرون نزنن  */
+
+body {
+  box-sizing: border-box;
+}
+
+/* با این کلاس میخواهم تا به کل سکشن تعریف شده ارتفاع و دیسپلی فلکس بدم تا باکس لاگین وسط چین شود */
+
+.page-cont {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(img/daniel-olah-04RhrsalOmU-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* این کلاس برای فرم دهی به داخل باکس هست و همینطور دربردارنده صفت بلور برای پس زمینه باکس ک زیبایی بهش میده و رنگ متون سفید میکنه استفاده شده */
+
+.box-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(40px);
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+/* اینجا تگ هدره داخل کلاس باکس رو سلکت کردم تا صفت هایی بهش نسبت بدم */
+
+.box-cont h1 {
+  text-align: center;
+  margin: 20px;
+  font-size: 72px;
+}
+
+/* این کلاس برای تگ فرم داخل اچ تی ام ال هست تا بتونم با استفاده ازش محتوای داخل فرم رو از نظر چیدمان کنترل کنم  */
+
+.from-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* با استفاده از کلاس فرم و صدا زدن لیبل چیدمان لیبل هارو کنترل کردم */
+
+.from-1 label {
+  margin-bottom: 5px;
+  padding: 10px 0px;
+}
+
+/* دراینجا رنگ متن های راهنمایی کننده داخل اینپوت هارو سفید کردم */
+
+::placeholder {
+  color: #fff;
+}
+
+/* با استفاده از فراخوانی اینپوت ها با تایپشون برای اونها پس زمینه مات به صورت گرادینت سایه و تایم اجرای انیمیشن دادم همچنین حاشیه دور اونهارو از بین بردم تا زیبا تر بشن */
+
+.from-1 input[type="tel"],
+input[type="password"] {
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 5px;
+  background: repeating-linear-gradient(
+    to right,
+    #ffffff1c,
+    rgba(0, 0, 0, 0.044)
+  );
+  box-shadow: 0px 5px 10px 5px rgba(255, 255, 255, 0.432);
+}
+
+/* با استفاده از فکوس خواستم تا بعد از کلیک روی فیلد ها پس زمینه اونها از مات به سفید تغییر بکنه و انیمیشن اونها طبق کلاس قبل اروم اجرا بشه */
+
+.from-1 input[type="tel"]:focus {
+  background-color: #fff;
+}
+
+input[type="password"]:focus {
+  background-color: #fff;
+}
+
+/* اینجا با فراخوانی کلاس فرم و صدا زدن اینپوته تایپ سابمیت به زیبا کردن دکمه فرم پرداختم مثل پس زمینه رنگی و علامت دست موس و یک سری تنظیمات چیدمان به همراه تایم اجرای انیمیشن هاور دکمه */
+
+.from-1 input[type="submit"] {
+  padding: 20px;
+  margin: 30px 0px;
+  border-radius: 5px;
+  border: none;
+  background-color: cornflowerblue;
+  font-size: larger;
+  color: #fff;
+  transition: 0.5s ease-out;
+  cursor: pointer;
+}
+
+/* با استفاده از هاور دارم به دکمه میگم که با اومدن موس روی دکمه چه تغییراتی در ظاهر این دکمه ایجاد بشه که اول پس زمینه متفاوت باشه و دوما دکمه با کد ترنزلیت ایگرگ به سمت بالا کمی حرکت بکنه و زیبا تر بشه این انیمیشن */
+
+.from-1 input[type="submit"]:hover {
+  background-color: skyblue;
+  color: black;
+  transform: translateY(-5px);
+}

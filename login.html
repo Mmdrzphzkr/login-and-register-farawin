@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<!-- این تگه ریشه فایل هست و در بردارنده کل تگ های برنامه نویس هست -->
+
+<html lang="en">
+  <!-- این تگ در بردارنده اصول و قوانین و صورت فایل است  -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-l.css" />
+    <title>Login</title>
+  </head>
+
+  <!-- این تگ دربردارنده کد ها و تگ هایی است که برنامه نویس مینویسد و پروژه ای میسازد -->
+
+  <body>
+    <!-- The <section> tag defines a section in a document. -->
+    <!--  این تگ رو تعریف کردم تا بتونم باکس لاگین و ریجیستر رو وسط چین بکنم با فلکس-->
+
+    <section class="page-cont">
+      <!-- این تگ دیو هم برای تعریف کردن یه بخش بخصوص هست -->
+      <!-- این تگ رو تعریف کردم تا اجزای داخل باکس رو مرتب سازی بکنم و وسط چین کنم به وسیله فلکس -->
+
+      <div class="box-cont">
+        <!-- تگ اچ 1 برای تعریف یک متن هدر هست ک شماره های مختلفی داره  -->
+        <!-- ازین تگ استفاده کردم تا به مرور گر اطلاع بدم این صفحه محتویاتش درمورد ورود یا لاگین هست -->
+
+        <h1>Login</h1>
+
+        <!-- این تگ برای تعیین و نوشتن یک پاراگراف است -->
+        <!-- تگ (a) برای لینک دار کردن یک قسمت از محتوا هست -->
+        <!-- این تگ رو استفاده کردم همراه یه تک لینک دار تا بتونم مخاطبی ک اکانت نداره رو به ریجیستر کردن راهنمایی کنم -->
+
+        <p>
+          Don't have an account? <a href="">Creat Your Account</a> it takes less
+          than a minute
+        </p>
+
+        <!-- The <label> tag defines a label for several elements -->
+        <!-- ازین تگ استفاده کردم تا اینپوت های مختلفی ک دارمو نام گذاری کنم  -->
+        <!-- تگ اینپوت برای ساختن فیلد های پرکردنی دکمه و ... هست که تایپ های مختلفی داره -->
+
+        <form class="from-1" action="">
+          <label for=""
+            >Telephone Number :
+            <input type="tel" placeholder="+98" pattern="[0-9]{11}" required />
+          </label>
+
+          <label for=""
+            >Password :
+            <input
+              type="password"
+              placeholder="********"
+              minlength="8"
+              required
+            />
+          </label>
+
+          <input type="submit" value="Login" />
+
+          <!-- از این تگ دیو استفاده کردم تا قسمتیو اختصاص بدم به چک باکس یاداوری و
+             فراموشی رمز تا بتونم چیدمان اون هارو کنترل کنم و برای ساختشون از یک لیبل و اینپوت و تگ لینک دار کردن استفاده کردم -->
+
+          <div class="remmember">
+            <label for=""
+              >Remember Me :
+              <input type="checkbox" />
+            </label>
+
+            <a href="">Forget password ?</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

@@ -65,7 +65,6 @@ body {
 /* با استفاده از کلاس فرم و صدا زدن لیبل چیدمان لیبل هارو کنترل کردم */
 
 .from-1 label {
-  margin-bottom: 5px;
   padding: 10px 0px;
 }
 
@@ -80,7 +79,7 @@ body {
 .from-1 input[type="tel"],
 input[type="password"] {
   padding: 10px;
-  margin-top: 20px;
+  margin: 10px 0px;
   border: none;
   outline: none;
   width: 100%;
@@ -107,8 +106,8 @@ input[type="password"]:focus {
 /* اینجا با فراخوانی کلاس فرم و صدا زدن اینپوته تایپ سابمیت به زیبا کردن دکمه فرم پرداختم مثل پس زمینه رنگی و علامت دست موس و یک سری تنظیمات چیدمان به همراه تایم اجرای انیمیشن هاور دکمه */
 
 .from-1 input[type="submit"] {
-  padding: 20px;
-  margin: 30px 0px;
+  padding: 10px;
+  margin: 20px 0px;
   border-radius: 5px;
   border: none;
   background-color: cornflowerblue;

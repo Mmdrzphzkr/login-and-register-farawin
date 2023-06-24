@@ -36,7 +36,7 @@
           <!-- The <label> tag defines a label for several elements -->
           <!-- ازین تگ استفاده کردم تا اینپوت های مختلفی ک دارمو نام گذاری کنم  -->
           <!-- تگ اینپوت برای ساختن فیلد های پرکردنی دکمه و ... هست که تایپ های مختلفی داره -->
-
+          <!-- اینجا با استفاده از رویداد آن بلور و تعریف دو تابع مختلف با چک کردن ورودی کاربر پیغامی را به کاربر نشان میدهد -->
           <label for="telephone" id="telLab">Telephone Number :</label>
           <input
             id="logTel"
@@ -54,6 +54,7 @@
             placeholder="********"
             onblur="validatePassword()"
           />
+          <!-- در فیلد سوم یک تابع فراخوانی کرده ام تا رمز عبور را با تکرار رمز عبور سنجش کند و ببیند آیا باهم مساوی اند یا خیر -->
 
           <label for="confPassword" id="confPassLab">Confirm Password : </label>
           <input

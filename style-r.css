@@ -12,7 +12,7 @@ body {
   box-sizing: border-box;
 }
 
-/* با این کلاس میخواهم تا به کل سکشن تعریف شده ارتفاع و دیسپلی فلکس بدم تا باکس لاگین وسط چین شود */
+/*   با این کلاس میخواهم تا به کل سکشن تعریف شده ارتفاع و دیسپلی فلکس بدم تا باکس لاگین وسط چین شود و همچنین با دادن یک عکس پس زمینه و کاور کردن پس زمینه با اون به زیبا کردن کار پرداختم */
 
 .page-cont {
   height: 100vh;
@@ -45,6 +45,14 @@ body {
   font-size: 72px;
 }
 
+/* اینجا تگ پاراگراف داخل کلاس باکس رو صدا زدم تا صفتایی رو بهش بدم */
+
+.box-cont p {
+  width: 300px;
+  font-size: large;
+  text-align: center;
+}
+
 /* این کلاس برای تگ فرم داخل اچ تی ام ال هست تا بتونم با استفاده ازش محتوای داخل فرم رو از نظر چیدمان کنترل کنم  */
 
 .from-1 {
@@ -52,12 +60,12 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 20px;
+  width: 100%;
 }
 
 /* با استفاده از کلاس فرم و صدا زدن لیبل چیدمان لیبل هارو کنترل کردم */
 
 .from-1 label {
-  margin-bottom: 5px;
   padding: 10px 0px;
 }
 
@@ -72,7 +80,7 @@ body {
 .from-1 input[type="tel"],
 input[type="password"] {
   padding: 10px;
-  margin-top: 20px;
+  margin: 10px 0px;
   border: none;
   outline: none;
   width: 100%;
@@ -82,7 +90,8 @@ input[type="password"] {
     #ffffff1c,
     rgba(0, 0, 0, 0.044)
   );
-  box-shadow: 0px 5px 10px 5px rgba(255, 255, 255, 0.432);
+  box-shadow: 0px 2px 5px 2px rgba(255, 255, 255, 0.432);
+  transition: 0.5s ease-out;
 }
 
 /* با استفاده از فکوس خواستم تا بعد از کلیک روی فیلد ها پس زمینه اونها از مات به سفید تغییر بکنه و انیمیشن اونها طبق کلاس قبل اروم اجرا بشه */
@@ -98,8 +107,8 @@ input[type="password"] {
 /* اینجا با فراخوانی کلاس فرم و صدا زدن اینپوته تایپ سابمیت به زیبا کردن دکمه فرم پرداختم مثل پس زمینه رنگی و علامت دست موس و یک سری تنظیمات چیدمان به همراه تایم اجرای انیمیشن هاور دکمه */
 
 .from-1 input[type="submit"] {
-  padding: 20px;
-  margin: 30px 0px;
+  padding: 10px;
+  margin: 20px 0px;
   border-radius: 5px;
   border: none;
   background-color: cornflowerblue;
@@ -115,4 +124,12 @@ input[type="password"] {
   background-color: skyblue;
   color: black;
   transform: translateY(-5px);
+}
+
+/* این بخش هم برای چیدمان قسمت چک باکس و فرگت پسورد هست و به چیدمانشون پرداختم */
+
+.remmember {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }

@@ -37,40 +37,43 @@
           <!-- ازین تگ استفاده کردم تا اینپوت های مختلفی ک دارمو نام گذاری کنم  -->
           <!-- تگ اینپوت برای ساختن فیلد های پرکردنی دکمه و ... هست که تایپ های مختلفی داره -->
 
-          <label for=""
-            >Telephone Number :
-            <input type="tel" placeholder="+98" pattern="[0-9]{11}" required />
-          </label>
+          <label for="telephone" id="telLab">Telephone Number :</label>
+          <input
+            id="logTel"
+            type="tel"
+            name="telephone"
+            placeholder="09124567890"
+            onblur=" validateNumber()"
+          />
 
-          <label for=""
-            >Password :
-            <input
-              type="password"
-              placeholder="********"
-              minlength="8"
-              required
-            />
-          </label>
+          <label for="password" id="passLab">Password : </label>
+          <input
+            id="logPass"
+            name="password"
+            type="password"
+            placeholder="********"
+            onblur="validatePassword()"
+          />
 
-          <label for=""
-            >Confirm Password :
-            <input
-              type="password"
-              placeholder="********"
-              minlength="8"
-              required
-            />
-          </label>
+          <label for="confPassword" id="confPassLab">Confirm Password : </label>
+          <input
+            id="logPassConf"
+            name="confPassword"
+            type="password"
+            placeholder="********"
+            onblur="confirmPassword()"
+          />
 
           <input type="submit" value="Register" />
 
           <!-- این تگ دیو رو به کار بردم تا قسمتی ایجاد کنم و متن مورد نظر که برای رفتن به صفحه ورود هست رو قرار بدم -->
 
           <div class="login">
-            <p>Do you have an account ? <a href="">Login</a></p>
+            <p>Do you have an account ? <a href="login.html">Login</a></p>
           </div>
         </form>
       </div>
     </section>
+    <script src="app.js"></script>
   </body>
 </html>

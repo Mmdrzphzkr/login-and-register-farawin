@@ -31,3 +31,21 @@ function validatePassword() {
     );
   }
 }
+
+function confirmPassword() {
+  var confirmedPassword = logPassConf.value;
+  var pass = logPass.value;
+
+  if(confirmedPassword == "" || pass == "")
+  {
+    document.getElementById("confPassLab").innerHTML = "There is no Password to match"
+  }
+  else if(confirmedPassword == pass)
+  {
+    document.getElementById("confPassLab").innerHTML = "Matched Passwords"
+  }
+  else
+  {
+    alert("Passwords Dont Matched Please confirm your password again...!")
+  }
+}

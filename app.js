@@ -2,12 +2,15 @@
 // این تابع با استفاده از ورودی کاربر و دریافت آن اول آن را چک میکند که دارای اعداد بین صفر تا 9 و طول 11 رقم باشد
 function validateNumber() {
   var tell = logTel.value;
-
+  
   let regex = /^[0-9]{11}$/;
 
   // اینجا با استفاده از یک شرط درست بودن یا غلط بودن ورودی کاربر را با قوانین موجود میسنجیم و پیغامی را نشان میدهیم
-
-  if (regex.test(tell)) {
+  // شرط اول برای چک کردن خالی بودن فیلد است که اگر خالی بود لیبل فیلد ها تغییر نکنند و متن قبلی خود را نگه دارند
+  if (tell == "") {
+    document.getElementById("telLab").innerHTML = "Telephone Number:";
+  }
+  else if (regex.test(tell)) {
     document.getElementById("telLab").innerHTML = "Correct Phone Number Type";
   } else {
     alert(
@@ -22,8 +25,11 @@ function validatePassword() {
   var pass = logPass.value;
 
   let regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
+  // شرط اول برای چک کردن خالی بودن فیلد است که اگر خالی بود لیبل فیلد ها تغییر نکنند و متن قبلی خود را نگه دارند
 
-  if (regex.test(pass)) {
+  if (pass == "") {
+    document.getElementById("passLab").innerHTML = "Password :";
+  } else if (regex.test(pass)) {
     document.getElementById("passLab").innerHTML = "Correct Password Type";
   } else {
     alert(
@@ -32,23 +38,21 @@ function validatePassword() {
   }
 }
 
-// این تابع برای بازبینی و سنجش همخوانی رمز عبور با تکرار رمز عبور است که با گرفتن دو مقدار فیلد های مربوطه آن هارا مورد سنجش قرار دادم 
+// این تابع برای بازبینی و سنجش همخوانی رمز عبور با تکرار رمز عبور است که با گرفتن دو مقدار فیلد های مربوطه آن هارا مورد سنجش قرار دادم
 // یک حالت هم برای خالی بودن فیلد رمز عبور در نظر گرفتم تا پیغامی دهد که کاربر متوجه شود تکرار رمز عبورش به دلیل خالی بودن فیلد رمز عبور درست انجام نشده است
+// شرط اول برای چک کردن خالی بودن فیلد است که اگر خالی بود لیبل فیلد ها تغییر نکنند و متن قبلی خود را نگه دارند
 
 function confirmPassword() {
   var confirmedPassword = logPassConf.value;
   var pass = logPass.value;
-
-  if(confirmedPassword == "" || pass == "")
-  {
-    document.getElementById("confPassLab").innerHTML = "There is no Password to match"
-  }
-  else if(confirmedPassword == pass)
-  {
-    document.getElementById("confPassLab").innerHTML = "Matched Passwords"
-  }
-  else
-  {
-    alert("Passwords Dont Matched Please confirm your password again...!")
+  if (confirmedPassword == "") {
+    document.getElementById("confPassLab").innerHTML = "Confirm Password :";
+  } else if (confirmedPassword == "" || pass == "") {
+    document.getElementById("confPassLab").innerHTML =
+      "There is no Password to match";
+  } else if (confirmedPassword == pass) {
+    document.getElementById("confPassLab").innerHTML = "Matched Passwords";
+  } else {
+    alert("Passwords Dont Matched Please confirm your password again...!");
   }
 }

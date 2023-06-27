@@ -2,15 +2,14 @@
 // این تابع با استفاده از ورودی کاربر و دریافت آن اول آن را چک میکند که دارای اعداد بین صفر تا 9 و طول 11 رقم باشد
 function validateNumber() {
   var tell = logTel.value;
-  
+
   let regex = /^[0-9]{11}$/;
 
   // اینجا با استفاده از یک شرط درست بودن یا غلط بودن ورودی کاربر را با قوانین موجود میسنجیم و پیغامی را نشان میدهیم
   // شرط اول برای چک کردن خالی بودن فیلد است که اگر خالی بود لیبل فیلد ها تغییر نکنند و متن قبلی خود را نگه دارند
   if (tell == "") {
     document.getElementById("telLab").innerHTML = "Telephone Number:";
-  }
-  else if (regex.test(tell)) {
+  } else if (regex.test(tell)) {
     document.getElementById("telLab").innerHTML = "Correct Phone Number Type";
   } else {
     alert(
@@ -54,5 +53,22 @@ function confirmPassword() {
     document.getElementById("confPassLab").innerHTML = "Matched Passwords";
   } else {
     alert("Passwords Dont Matched Please confirm your password again...!");
+  }
+}
+
+//در این قسمت با گرفتن و ذخیره دکمه ورود در باتن و ست کردن اون به صورت خاموش . با چک کردن مقادیر اینپوت ها در یک شرط دکمه را خاموش و روشن میکنیم
+
+let button = document.getElementById("loginBtn");
+
+button.disabled = true; //دکمه را خاموش میکند
+
+logTel.addEventListener("change", stateHandle);
+logPass.addEventListener("change", stateHandle);
+
+function stateHandle() {
+  if (logTel.value == "" || logPass.value == "") {
+    button.disabled = true; 
+  } else {
+    button.disabled = false; //دکمه را روشن میکند
   }
 }

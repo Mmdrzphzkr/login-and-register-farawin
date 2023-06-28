@@ -70,13 +70,13 @@ let regex2 = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
 
 function stateHandle() {
   if (logTel.value == "" || logPass.value == "") {
-    button.disabled = true; 
-  } 
-  else if(!regex.test(logTel.value) || !regex2.test(logPass.value)) 
-  {
+    //اگر خالی بود
+    button.disabled = true;
+  } else if (!regex.test(logTel.value) || !regex2.test(logPass.value)) {
+    //اگر پر بود ولی از قوانین تبعیت نمیکرد
     button.disabled = true; //دکمه را روشن میکند
-  }
-  else{
+  } else {
+    //در صورت درست بودن طبق قوانین
     button.disabled = false;
   }
 }

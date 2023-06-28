@@ -65,10 +65,18 @@ button.disabled = true; //دکمه را خاموش میکند
 logTel.addEventListener("change", stateHandle);
 logPass.addEventListener("change", stateHandle);
 
+let regex = /^[0-9]{11}$/;
+let regex2 = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
+
 function stateHandle() {
   if (logTel.value == "" || logPass.value == "") {
     button.disabled = true; 
-  } else {
-    button.disabled = false; //دکمه را روشن میکند
+  } 
+  else if(!regex.test(logTel.value) || !regex2.test(logPass.value)) 
+  {
+    button.disabled = true; //دکمه را روشن میکند
+  }
+  else{
+    button.disabled = false;
   }
 }

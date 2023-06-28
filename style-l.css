@@ -100,8 +100,7 @@ input[type="password"] {
 .from-1 input[type="tel"]:focus {
   background-color: #fff;
 }
-
-.form-1 input[type="password"]:focus {
+input[type="password"]:focus {
   background-color: #fff;
 }
 

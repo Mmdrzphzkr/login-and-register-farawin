@@ -9,7 +9,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style-l.css" />
+    <link rel="stylesheet" href="style-r.css" />
     <title>Register</title>
   </head>
 
@@ -56,14 +56,17 @@
           />
           <!-- در فیلد سوم یک تابع فراخوانی کرده ام تا رمز عبور را با تکرار رمز عبور سنجش کند و ببیند آیا باهم مساوی اند یا خیر -->
 
-          <label for="confPassword" id="confPassLab">Confirm Password : </label>
+          <!-- <label for="confPassword" id="confPassLab">Confirm Password : </label>
           <input
             id="logPassConf"
             name="confPassword"
             type="password"
             placeholder="********"
             onblur="confirmPassword()"
-          />
+          /> -->
+
+          <label for="name" id="nameLabel">Your Name</label>
+          <input type="text" id="nameReg" name="name" placeholder="Mohammad" onblur="nameConf()">
 
           <input type="submit" value="Register" id="regBtn" />
 

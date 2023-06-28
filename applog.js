@@ -37,28 +37,36 @@ function validatePassword() {
   }
 }
 
+loginBtn.onclick = function (e) {
+  let regex2 = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
+  let regex = /^[0-9]{11}$/;
+  if (regex.test(logTel.value) || regex2.test(logPass.value)) {
+    farawin.testLogin(
+      (username = document.getElementById("logTel")),
+      (password = document.getElementById("logPass")),
+      (response) => {
+        //response is object like {code: string, message: string}
+        //if code is '200' mean success
+        //else mean error!
+        //Goodluck:)
 
-//در این قسمت با گرفتن و ذخیره دکمه ورود در باتن و ست کردن اون به صورت خاموش . با چک کردن مقادیر اینپوت ها در یک شرط دکمه را خاموش و روشن میکنیم
+        const success = response.code == "200";
 
-let button = document.getElementById("loginBtn");
+        if (success) console.log("result from api -> ", response);
+        else console.error("error from api -> ", response);
 
-button.disabled = true; //دکمه را خاموش میکند
+        //you response to get message
+        //like
+        alert(response.message);
 
-logTel.addEventListener("change", stateHandle);
-logPass.addEventListener("change", stateHandle);
-
-let regex = /^[0-9]{11}$/;
-let regex2 = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
-
-function stateHandle() {
-  if (logTel.value == "" || logPass.value == "") {
-    //اگر خالی بود
-    button.disabled = true;
-  } else if (!regex.test(logTel.value) || !regex2.test(logPass.value)) {
-    //اگر پر بود ولی از قوانین تبعیت نمیکرد
-    button.disabled = true; 
+        //redirect if you want
+        // if(success)
+        //   window.location.assign('url...')
+      }
+    );
+    return true;
   } else {
-    //در صورت درست بودن طبق قوانین
-    button.disabled = false;//دکمه را روشن میکند
+    e.preventDefault();
   }
-}
+};
+

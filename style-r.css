@@ -94,6 +94,21 @@ input[type="password"] {
   transition: 0.5s ease-out;
 }
 
+#nameReg{
+  padding: 10px;
+  margin: 10px 0px;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 5px;
+  background: repeating-linear-gradient(
+    to right,
+    #ffffff1c,
+    rgba(0, 0, 0, 0.044)
+  );
+  box-shadow: 0px 2px 5px 2px rgba(255, 255, 255, 0.432);
+  transition: 0.5s ease-out;
+}
 /* با استفاده از فکوس خواستم تا بعد از کلیک روی فیلد ها پس زمینه اونها از مات به سفید تغییر بکنه و انیمیشن اونها طبق کلاس قبل اروم اجرا بشه */
 
 .from-1 input[type="tel"]:focus {
@@ -104,6 +119,9 @@ input[type="password"]:focus {
   background-color: #fff;
 }
 
+#nameReg:focus{
+  background-color: #fff;
+}
 /* اینجا با فراخوانی کلاس فرم و صدا زدن اینپوته تایپ سابمیت به زیبا کردن دکمه فرم پرداختم مثل پس زمینه رنگی و علامت دست موس و یک سری تنظیمات چیدمان به همراه تایم اجرای انیمیشن هاور دکمه */
 
 .from-1 input[type="submit"] {

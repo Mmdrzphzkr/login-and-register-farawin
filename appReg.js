@@ -56,29 +56,49 @@ function confirmPassword() {
   }
 }
 
-let button2 = document.getElementById("regBtn");
-
-button2.disabled = true; //دکمه را خاموش میکند
-
-logTel.addEventListener("change", stateHandle);
-logPass.addEventListener("change", stateHandle);
-logPassConf.addEventListener("change", stateHandle);
-let regex = /^[0-9]{11}$/;
-let regex2 = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
-
-function stateHandle() {
-  if (logTel.value == "" || logPass.value == "" || logPassConf.value == "") {
-    //اگر خالی بود
-    button2.disabled = true;
-  } else if (!regex.test(logTel.value) || !regex2.test(logPass.value)) {
-    //اگر پر بود ولی از قوانین تبعیت نمیکرد
-    if( logPassConf.value != logPass.value){
-        button2.disabled = true; 
-    }
+function nameConf() {
+  var yourName = nameReg.value;
+  let regex = /^[a-zA-Z_ ]*$/;
+  if (yourName == "") {
+    document.getElementById("nameLabel").innerHTML = "Your Name :";
+  } else if (regex.test(yourName)) {
+    document.getElementById("nameLabel").innerHTML = "Correct Name Type :";
   } else {
-    //در صورت درست بودن طبق قوانین
-    button2.disabled = false;//دکمه را روشن میکند
+    alert("Your name must have just a-z and A-Z characters");
   }
 }
+// در اینجا با رویداد آن کلیک برای دکمه مشخص کردم که در صورت درست نبودن شرط دکمه غیر فعال باشد 
+//پس از سنجش صحت درستی مقادیر ورودی دکمه امکان روشن شدن دارد
+regBtn.onclick = function (e) {
+  let regex2 = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
+  let regex = /^[0-9]{11}$/;
+  if (regex.test(logTel.value) || regex2.test(logPass.value)) {
+    farawin.testRegister(
+      (username = document.getElementById("logTel")),
+      (password = document.getElementById("logPass")),
+      (name = document.getElementById("nameReg")),
+      (response) => {
+        //response is object like {code: string, message: string}
+        //if code is '200' mean success
+        //else mean error!
+        //Goodluck:)
 
-    
+        const success = response.code == "200";
+
+        if (success) console.log("result from api -> ", response);
+        else console.error("error from api -> ", response);
+
+        //you response to get message
+        //like
+        alert(response.message);
+
+        //redirect if you want
+        // if(success)
+        //   window.location.assign('url...')
+      }
+    );
+    return true;
+  } else {
+    e.preventDefault();
+  }
+};

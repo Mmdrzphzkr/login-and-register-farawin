@@ -37,28 +37,48 @@ function validatePassword() {
   }
 }
 
+// این تابع برای بازبینی و سنجش همخوانی رمز عبور با تکرار رمز عبور است که با گرفتن دو مقدار فیلد های مربوطه آن هارا مورد سنجش قرار دادم
+// یک حالت هم برای خالی بودن فیلد رمز عبور در نظر گرفتم تا پیغامی دهد که کاربر متوجه شود تکرار رمز عبورش به دلیل خالی بودن فیلد رمز عبور درست انجام نشده است
+// شرط اول برای چک کردن خالی بودن فیلد است که اگر خالی بود لیبل فیلد ها تغییر نکنند و متن قبلی خود را نگه دارند
 
-//در این قسمت با گرفتن و ذخیره دکمه ورود در باتن و ست کردن اون به صورت خاموش . با چک کردن مقادیر اینپوت ها در یک شرط دکمه را خاموش و روشن میکنیم
+function confirmPassword() {
+  var confirmedPassword = logPassConf.value;
+  var pass = logPass.value;
+  if (confirmedPassword == "") {
+    document.getElementById("confPassLab").innerHTML = "Confirm Password :";
+  } else if (confirmedPassword == "" || pass == "") {
+    document.getElementById("confPassLab").innerHTML =
+      "There is no Password to match";
+  } else if (confirmedPassword == pass) {
+    document.getElementById("confPassLab").innerHTML = "Matched Passwords";
+  } else {
+    alert("Passwords Dont Matched Please confirm your password again...!");
+  }
+}
 
-let button = document.getElementById("loginBtn");
+let button2 = document.getElementById("regBtn");
 
-button.disabled = true; //دکمه را خاموش میکند
+button2.disabled = true; //دکمه را خاموش میکند
 
 logTel.addEventListener("change", stateHandle);
 logPass.addEventListener("change", stateHandle);
-
+logPassConf.addEventListener("change", stateHandle);
 let regex = /^[0-9]{11}$/;
 let regex2 = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
 
 function stateHandle() {
-  if (logTel.value == "" || logPass.value == "") {
+  if (logTel.value == "" || logPass.value == "" || logPassConf.value == "") {
     //اگر خالی بود
-    button.disabled = true;
+    button2.disabled = true;
   } else if (!regex.test(logTel.value) || !regex2.test(logPass.value)) {
     //اگر پر بود ولی از قوانین تبعیت نمیکرد
-    button.disabled = true; 
+    if( logPassConf.value != logPass.value){
+        button2.disabled = true; 
+    }
   } else {
     //در صورت درست بودن طبق قوانین
-    button.disabled = false;//دکمه را روشن میکند
+    button2.disabled = false;//دکمه را روشن میکند
   }
 }
+
+    

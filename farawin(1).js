@@ -169,7 +169,7 @@ const farawin = {
    *
    */
   testRegister: async (username, password, name, responseHandlerCallback) => {
-    const result = await fetchFromApi("POST", "user/register", {
+    const result = await fetchFromApi("POST", "user", {
       username,
       password,
       name,

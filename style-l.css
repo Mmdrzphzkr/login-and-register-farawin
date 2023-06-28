@@ -106,7 +106,7 @@ input[type="password"]:focus {
 
 /* اینجا با فراخوانی کلاس فرم و صدا زدن اینپوته تایپ سابمیت به زیبا کردن دکمه فرم پرداختم مثل پس زمینه رنگی و علامت دست موس و یک سری تنظیمات چیدمان به همراه تایم اجرای انیمیشن هاور دکمه */
 
-.from-1 input[type="submit"] {
+.from-1 input[type="button"] {
   padding: 10px;
   margin: 20px 0px;
   border-radius: 5px;
@@ -120,7 +120,7 @@ input[type="password"]:focus {
 
 /* با استفاده از هاور دارم به دکمه میگم که با اومدن موس روی دکمه چه تغییراتی در ظاهر این دکمه ایجاد بشه که اول پس زمینه متفاوت باشه و دوما دکمه با کد ترنزلیت ایگرگ به سمت بالا کمی حرکت بکنه و زیبا تر بشه این انیمیشن */
 
-.from-1 input[type="submit"]:hover {
+.from-1 input[type="button"]:hover {
   background-color: skyblue;
   color: black;
   transform: translateY(-5px);

@@ -74,9 +74,9 @@ regBtn.onclick = function (e) {
   let regex = /^[0-9]{11}$/;
   if (regex.test(logTel.value) || regex2.test(logPass.value)) {
     farawin.testRegister(
-      (username = document.getElementById("logTel")),
-      (password = document.getElementById("logPass")),
-      (name = document.getElementById("nameReg")),
+      (username = document.getElementById("logTel").value),
+      (password = document.getElementById("logPass").value),
+      (name = document.getElementById("nameReg").value),
       (response) => {
         //response is object like {code: string, message: string}
         //if code is '200' mean success

@@ -42,8 +42,8 @@ loginBtn.onclick = function (e) {
   let regex = /^[0-9]{11}$/;
   if (regex.test(logTel.value) || regex2.test(logPass.value)) {
     farawin.testLogin(
-      (username = document.getElementById("logTel")),
-      (password = document.getElementById("logPass")),
+      (username = document.getElementById("logTel").value),
+      (password = document.getElementById("logPass").value),
       (response) => {
         //response is object like {code: string, message: string}
         //if code is '200' mean success
